@@ -1,0 +1,746 @@
+{
+  "last_node_id": 25,
+  "last_link_id": 25,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "CR String To Combo",
+      "pos": [
+        880,
+        1050
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 7,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "any",
+          "type": "*",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR String To Combo"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 11,
+      "type": "CR String To Number",
+      "pos": [
+        910,
+        890
+      ],
+      "size": {
+        "0": 210,
+        "1": 100
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 11,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR String To Number"
+      },
+      "widgets_values": [
+        "text",
+        "round"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        1170,
+        730
+      ],
+      "size": [
+        330,
+        550
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 2
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 5
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 6
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "link": 12,
+          "widget": {
+            "name": "cfg"
+          },
+          "slot_index": 6
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": 8,
+          "widget": {
+            "name": "sampler_name"
+          },
+          "slot_index": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        786211013638652,
+        null,
+        20,
+        7,
+        "euler",
+        "normal",
+        1,
+        "auto",
+        "true"
+      ],
+      "color": "#332222",
+      "bgcolor": "#553333",
+      "shape": 1
+    },
+    {
+      "id": 17,
+      "type": "CR XY From Folder",
+      "pos": [
+        920,
+        270
+      ],
+      "size": {
+        "0": 430,
+        "1": 400
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "trigger",
+          "type": "BOOLEAN",
+          "link": 16,
+          "widget": {
+            "name": "trigger"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            20
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "trigger",
+          "type": "BOOLEAN",
+          "links": [
+            17
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR XY From Folder"
+      },
+      "widgets_values": [
+        "demo",
+        1,
+        9,
+        3,
+        "",
+        "",
+        50,
+        0,
+        false
+      ]
+    },
+    {
+      "id": 18,
+      "type": "CR Image Output",
+      "pos": [
+        1380,
+        340
+      ],
+      "size": [
+        240,
+        360
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 18
+        },
+        {
+          "name": "trigger",
+          "type": "BOOLEAN",
+          "link": 17,
+          "widget": {
+            "name": "trigger"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "trigger",
+          "type": "BOOLEAN",
+          "links": [
+            19
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR Image Output"
+      },
+      "widgets_values": [
+        "Save",
+        "demo\\cr",
+        "None",
+        "png",
+        false
+      ]
+    },
+    {
+      "id": 19,
+      "type": "CR XY Save Grid Image",
+      "pos": [
+        1650,
+        270
+      ],
+      "size": [
+        830,
+        990
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 20
+        },
+        {
+          "name": "trigger",
+          "type": "BOOLEAN",
+          "link": 19,
+          "widget": {
+            "name": "trigger"
+          }
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR XY Save Grid Image"
+      },
+      "widgets_values": [
+        "Save",
+        "grid",
+        "CR",
+        "png",
+        "",
+        false
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CR XY List",
+      "pos": [
+        440,
+        270
+      ],
+      "size": {
+        "0": 400,
+        "1": 390
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "INT",
+          "link": 25,
+          "widget": {
+            "name": "index"
+          },
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "X",
+          "type": "STRING",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Y",
+          "type": "STRING",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "x_annotation",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "y_annotation",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "trigger",
+          "type": "BOOLEAN",
+          "links": [
+            16
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "show_help",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CR XY List"
+      },
+      "widgets_values": [
+        1,
+        "6, 7, 8",
+        "",
+        "",
+        "",
+        "euler_ancestral, dpmpp_2m, ddim",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "id": 1,
+      "type": "Efficient Loader",
+      "pos": [
+        440,
+        730
+      ],
+      "size": {
+        "0": 400,
+        "1": 462
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader"
+      },
+      "widgets_values": [
+        "v1-5-pruned-emaonly.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "(best quality, masterpiece), full body photo, 1 puppy wearing a hat, solo, in snow, 8K",
+        "nsfw, nude, (worst quality:1.6), (low quality:1.6), (normal quality:1.6), text, logo, watermark, signature",
+        "none",
+        "comfy",
+        512,
+        512,
+        1
+      ],
+      "color": "#223333",
+      "bgcolor": "#335555",
+      "shape": 1
+    },
+    {
+      "id": 25,
+      "type": "PrimitiveNode",
+      "pos": [
+        200,
+        270
+      ],
+      "size": {
+        "0": 210,
+        "1": 80
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            25
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "index"
+          }
+        }
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "widgets_values": [
+        1,
+        "increment"
+      ]
+    }
+  ],
+  "links": [
+    [
+      2,
+      1,
+      0,
+      6,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      1,
+      1,
+      6,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      4,
+      1,
+      2,
+      6,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      1,
+      3,
+      6,
+      3,
+      "LATENT"
+    ],
+    [
+      6,
+      1,
+      4,
+      6,
+      4,
+      "VAE"
+    ],
+    [
+      7,
+      7,
+      1,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      8,
+      8,
+      0,
+      6,
+      7,
+      "COMBO"
+    ],
+    [
+      11,
+      7,
+      0,
+      11,
+      0,
+      "STRING"
+    ],
+    [
+      12,
+      11,
+      1,
+      6,
+      6,
+      "FLOAT"
+    ],
+    [
+      16,
+      7,
+      4,
+      17,
+      0,
+      "BOOLEAN"
+    ],
+    [
+      17,
+      17,
+      1,
+      18,
+      1,
+      "BOOLEAN"
+    ],
+    [
+      18,
+      6,
+      5,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      19,
+      18,
+      0,
+      19,
+      1,
+      "BOOLEAN"
+    ],
+    [
+      20,
+      17,
+      0,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      25,
+      25,
+      0,
+      7,
+      0,
+      "INT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

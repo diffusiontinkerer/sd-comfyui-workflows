@@ -1,0 +1,620 @@
+{
+  "last_node_id": 8,
+  "last_link_id": 12,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "KSampler (Efficient)",
+      "pos": [
+        1360,
+        396
+      ],
+      "size": [
+        325,
+        562
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 2
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 3
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 4
+        },
+        {
+          "name": "optional_vae",
+          "type": "VAE",
+          "link": 5
+        },
+        {
+          "name": "script",
+          "type": "SCRIPT",
+          "link": 7
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            6
+          ],
+          "shape": 3,
+          "slot_index": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler (Efficient)"
+      },
+      "widgets_values": [
+        -1,
+        null,
+        20,
+        7,
+        "euler",
+        "normal",
+        1,
+        "auto",
+        "true"
+      ],
+      "color": "#222233",
+      "bgcolor": "#333355",
+      "shape": 1
+    },
+    {
+      "id": 4,
+      "type": "XY Plot",
+      "pos": [
+        979,
+        910
+      ],
+      "size": {
+        "0": 315,
+        "1": 194
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dependencies",
+          "type": "DEPENDENCIES",
+          "link": 8
+        },
+        {
+          "name": "X",
+          "type": "XY",
+          "link": 12,
+          "slot_index": 1
+        },
+        {
+          "name": "Y",
+          "type": "XY",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SCRIPT",
+          "type": "SCRIPT",
+          "links": [
+            7
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XY Plot"
+      },
+      "widgets_values": [
+        0,
+        "False",
+        "Horizontal",
+        "True",
+        "Images"
+      ],
+      "color": "#332233",
+      "bgcolor": "#553355",
+      "shape": 1
+    },
+    {
+      "id": 6,
+      "type": "XY Input: Sampler/Scheduler",
+      "pos": [
+        481,
+        1025
+      ],
+      "size": [
+        315,
+        154
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "X or Y",
+          "type": "XY",
+          "links": [
+            9
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XY Input: Sampler/Scheduler"
+      },
+      "widgets_values": [
+        "sampler",
+        3,
+        "euler_ancestral",
+        "None",
+        "dpmpp_2m",
+        "None",
+        "ddim",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None",
+        "None"
+      ],
+      "color": "#223333",
+      "bgcolor": "#335555",
+      "shape": 1
+    },
+    {
+      "id": 8,
+      "type": "XY Input: Manual XY Entry",
+      "pos": [
+        522,
+        608
+      ],
+      "size": [
+        262,
+        186.6666259765625
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "X or Y",
+          "type": "XY",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XY Input: Manual XY Entry"
+      },
+      "widgets_values": [
+        "Steps",
+        "15;\n25;\n35;"
+      ],
+      "color": "#223333",
+      "bgcolor": "#335555",
+      "shape": 1
+    },
+    {
+      "id": 5,
+      "type": "XY Input: CFG Scale",
+      "pos": [
+        479,
+        865
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "X or Y",
+          "type": "XY",
+          "links": [
+            12
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XY Input: CFG Scale"
+      },
+      "widgets_values": [
+        3,
+        7,
+        9
+      ],
+      "color": "#223333",
+      "bgcolor": "#335555",
+      "shape": 1
+    },
+    {
+      "id": 7,
+      "type": "Manual XY Entry Info",
+      "pos": [
+        33,
+        530
+      ],
+      "size": [
+        437,
+        649.3333740234375
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "properties": {
+        "Node name for S&R": "Manual XY Entry Info"
+      },
+      "widgets_values": [
+        "_____________SYNTAX_____________\n(X/Y_types)     (X/Y_values)\nSeeds++ Batch   batch_count\nSteps           steps_1;steps_2;...\nStartStep       start_step_1;start_step_2;...\nEndStep         end_step_1;end_step_2;...\nCFG Scale       cfg_1;cfg_2;...\nSampler(1)      sampler_1;sampler_2;...\nSampler(2)      sampler_1,scheduler_1;...\nSampler(3)      sampler_1;...;,default_scheduler\nScheduler       scheduler_1;scheduler_2;...\nDenoise         denoise_1;denoise_2;...\nVAE             vae_1;vae_2;vae_3;...\n+Prompt S/R     search_txt;replace_1;replace_2;...\n-Prompt S/R     search_txt;replace_1;replace_2;...\nCheckpoint(1)   ckpt_1;ckpt_2;ckpt_3;...\nCheckpoint(2)   ckpt_1,clip_skip_1;...\nCheckpoint(3)   ckpt_1;ckpt_2;...;,default_clip_skip\nClip Skip       clip_skip_1;clip_skip_2;...\nLoRA(1)         lora_1;lora_2;lora_3;...\nLoRA(2)         lora_1;...;,default_model_str,default_clip_str\nLoRA(3)         lora_1,model_str_1,clip_str_1;...\n\n____________SAMPLERS____________\neuler;\neuler_ancestral;\nheun;\nheunpp2;\ndpm_2;\ndpm_2_ancestral;\nlms;\ndpm_fast;\ndpm_adaptive;\ndpmpp_2s_ancestral;\ndpmpp_sde;\ndpmpp_sde_gpu;\ndpmpp_2m;\ndpmpp_2m_sde;\ndpmpp_2m_sde_gpu;\ndpmpp_3m_sde;\ndpmpp_3m_sde_gpu;\nddpm;\nlcm;\nddim;\nuni_pc;\nuni_pc_bh2\n\n___________SCHEDULERS___________\nnormal;\nkarras;\nexponential;\nsgm_uniform;\nsimple;\nddim_uniform\n\n_____________VAES_______________\nkl-f8-anime2.ckpt;\norangemix.vae.pt;\nsdxl_vae.safetensors;\nvae-ft-mse-840000-ema-pruned.safetensors\n\n___________CHECKPOINTS__________\nAOM3A3_orangemixs.safetensors;\nSDXL-TURBO\\sd_xl_turbo_1.0_fp16.safetensors;\nSVD\\svd.safetensors;\nSVD\\svd_xt.safetensors;\nanything-v3-fp16-pruned.safetensors;\ncardosAnimated_v30.safetensors;\nsd_xl_base_1.0_0.9vae.safetensors;\nsd_xl_refiner_1.0_0.9vae.safetensors;\nv1-5-inpainting.ckpt;\nv1-5-pruned-emaonly.safetensors;\nv2-1_512-ema-pruned.safetensors;\nv2-1_768-ema-pruned.safetensors\n\n_____________LORAS______________\nepi_noiseoffset2.safetensors;\nlcm-lora-sdv1-5.safetensors;\nlcm-lora-sdxl.safetensors;\nlcm-lora-ssd-1b.safetensors\n"
+      ],
+      "color": "#223333",
+      "bgcolor": "#335555",
+      "shape": 1
+    },
+    {
+      "id": 3,
+      "type": "PreviewImage",
+      "pos": [
+        1730,
+        401
+      ],
+      "size": [
+        650.0000610351562,
+        685
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Efficient Loader",
+      "pos": [
+        900,
+        396
+      ],
+      "size": [
+        400,
+        462
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "lora_stack",
+          "type": "LORA_STACK",
+          "link": null
+        },
+        {
+          "name": "cnet_stack",
+          "type": "CONTROL_NET_STACK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CONDITIONING+",
+          "type": "CONDITIONING",
+          "links": [
+            2
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "CONDITIONING-",
+          "type": "CONDITIONING",
+          "links": [
+            3
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            4
+          ],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            5
+          ],
+          "shape": 3,
+          "slot_index": 4
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "DEPENDENCIES",
+          "type": "DEPENDENCIES",
+          "links": [
+            8
+          ],
+          "shape": 3,
+          "slot_index": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Efficient Loader"
+      },
+      "widgets_values": [
+        "v1-5-pruned-emaonly.safetensors",
+        "Baked VAE",
+        -1,
+        "None",
+        1,
+        1,
+        "(best quality, masterpiece), full body photo, 1 puppy wearing a hat, solo, in snow, 8K",
+        "nsfw, nude, (worst quality:1.6), (low quality:1.6), (normal quality:1.6), text, logo, watermark, signature",
+        "none",
+        "comfy",
+        512,
+        512,
+        1
+      ],
+      "color": "#223322",
+      "bgcolor": "#335533",
+      "shape": 1
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "MODEL"
+    ],
+    [
+      2,
+      1,
+      1,
+      2,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      3,
+      1,
+      2,
+      2,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      4,
+      1,
+      3,
+      2,
+      3,
+      "LATENT"
+    ],
+    [
+      5,
+      1,
+      4,
+      2,
+      4,
+      "VAE"
+    ],
+    [
+      6,
+      2,
+      5,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      7,
+      4,
+      0,
+      2,
+      5,
+      "SCRIPT"
+    ],
+    [
+      8,
+      1,
+      6,
+      4,
+      0,
+      "DEPENDENCIES"
+    ],
+    [
+      9,
+      6,
+      0,
+      4,
+      2,
+      "XY"
+    ],
+    [
+      12,
+      5,
+      0,
+      4,
+      1,
+      "XY"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
