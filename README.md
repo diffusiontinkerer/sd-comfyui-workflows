@@ -13,3 +13,5 @@ Here are a few recommended custom nodes
 - https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes (Comfyroll)
 - https://github.com/tinyterra/ComfyUI_tinyterraNodes (tinyterraNodes)
 - https://github.com/pythongosssss/ComfyUI-Custom-Scripts (ComfyUI-Custom-Scripts)
+- https://github.com/ssitu/ComfyUI_UltimateSDUpscale (Ultimate SD Upscale)
+- https://github.com/chrisgoringe/cg-use-everywhere (UE Nodes)
