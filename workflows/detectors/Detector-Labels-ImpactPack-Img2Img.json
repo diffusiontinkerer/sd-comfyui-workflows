@@ -1,0 +1,518 @@
+{
+  "last_node_id": 37,
+  "last_link_id": 54,
+  "nodes": [
+    {
+      "id": 25,
+      "type": "SegmDetectorSEGS",
+      "pos": [
+        590,
+        150
+      ],
+      "size": {
+        "0": 400,
+        "1": 212
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segm_detector",
+          "type": "SEGM_DETECTOR",
+          "link": 39
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 53
+        },
+        {
+          "name": "detailer_hook",
+          "type": "DETAILER_HOOK",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS",
+          "type": "SEGS",
+          "links": [
+            41,
+            43,
+            49
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SegmDetectorSEGS"
+      },
+      "widgets_values": [
+        0.5,
+        10,
+        3,
+        10,
+        "all"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "ImpactFrom_SEG_ELT",
+      "pos": [
+        1540,
+        130
+      ],
+      "size": {
+        "0": 342.5999755859375,
+        "1": 166
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "seg_elt",
+          "type": "SEG_ELT",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "seg_elt",
+          "type": "SEG_ELT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cropped_image",
+          "type": "IMAGE",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "cropped_mask",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "crop_region",
+          "type": "SEG_ELT_crop_region",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "bbox",
+          "type": "SEG_ELT_bbox",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "control_net_wrapper",
+          "type": "SEG_ELT_control_net_wrapper",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "confidence",
+          "type": "FLOAT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "label",
+          "type": "STRING",
+          "links": [
+            45
+          ],
+          "shape": 3,
+          "slot_index": 7
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactFrom_SEG_ELT"
+      }
+    },
+    {
+      "id": 28,
+      "type": "ImpactDecomposeSEGS",
+      "pos": [
+        1110,
+        140
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 43
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS_HEADER",
+          "type": "SEGS_HEADER",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "SEG_ELT",
+          "type": "SEG_ELT",
+          "links": [
+            44
+          ],
+          "shape": 6,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactDecomposeSEGS"
+      }
+    },
+    {
+      "id": 35,
+      "type": "ImpactSEGSToMaskList",
+      "pos": [
+        1110,
+        240
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 49
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            50
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactSEGSToMaskList"
+      }
+    },
+    {
+      "id": 36,
+      "type": "MaskToImage",
+      "pos": [
+        1110,
+        320
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 50
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            51
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      }
+    },
+    {
+      "id": 30,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1550,
+        430
+      ],
+      "size": [
+        350,
+        430
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 45,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "person",
+        "handbag"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "SEGSPreview",
+      "pos": [
+        1040,
+        430
+      ],
+      "size": [
+        470,
+        430
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 41
+        },
+        {
+          "name": "fallback_image_opt",
+          "type": "IMAGE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SEGSPreview"
+      },
+      "widgets_values": [
+        true,
+        0.2
+      ]
+    },
+    {
+      "id": 34,
+      "type": "PreviewImage",
+      "pos": [
+        590,
+        440
+      ],
+      "size": [
+        400,
+        420
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 51
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 37,
+      "type": "LoadImage",
+      "pos": [
+        20,
+        330
+      ],
+      "size": [
+        500,
+        520
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            53
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "disneyPixarCartoonA_v10.jpeg",
+        "image"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "UltralyticsDetectorProvider",
+      "pos": [
+        140,
+        130
+      ],
+      "size": {
+        "0": 315,
+        "1": 78
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BBOX_DETECTOR",
+          "type": "BBOX_DETECTOR",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "SEGM_DETECTOR",
+          "type": "SEGM_DETECTOR",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltralyticsDetectorProvider"
+      },
+      "widgets_values": [
+        "segm/yolov8m-seg.pt"
+      ]
+    }
+  ],
+  "links": [
+    [
+      39,
+      24,
+      1,
+      25,
+      0,
+      "SEGM_DETECTOR"
+    ],
+    [
+      41,
+      25,
+      0,
+      26,
+      0,
+      "SEGS"
+    ],
+    [
+      43,
+      25,
+      0,
+      28,
+      0,
+      "SEGS"
+    ],
+    [
+      44,
+      28,
+      1,
+      29,
+      0,
+      "SEG_ELT"
+    ],
+    [
+      45,
+      29,
+      7,
+      30,
+      0,
+      "STRING"
+    ],
+    [
+      49,
+      25,
+      0,
+      35,
+      0,
+      "SEGS"
+    ],
+    [
+      50,
+      35,
+      0,
+      36,
+      0,
+      "MASK"
+    ],
+    [
+      51,
+      36,
+      0,
+      34,
+      0,
+      "IMAGE"
+    ],
+    [
+      53,
+      37,
+      0,
+      25,
+      1,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
